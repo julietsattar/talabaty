@@ -19,43 +19,9 @@ class _task3State extends State<task3> {
             children: [
               Image.asset("images/IMG_20220901_122150-removebg-preview.png", height: 190,width: 190,),
               SizedBox(height: 40,),
-              TextFormField(
-                decoration: InputDecoration(
-                  suffix: Text("الاسم"),
-                  hintText:"الاسم",
-                  hintStyle: TextStyle(color: Colors.grey),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(12),),
-                      borderSide: BorderSide(
-                          color: Colors.black12,
-                          width: 1
-                      )
-                  ),
-                  fillColor: Colors.black12 ,
-                  filled: true,
-                  contentPadding: EdgeInsets.all(16),
-                ),
-                maxLength: 15,
-              ),
+              txtff(HintT: "الاسم", suf: "الاسم", MaxL: 15),
               SizedBox(height: 30,),
-              TextFormField(
-                decoration: InputDecoration(
-                  suffix: Text("رقم الهاتف"),
-                  hintText:"رقم الهاتف",
-                  hintStyle: TextStyle(color: Colors.grey),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(12),),
-                      borderSide: BorderSide(
-                          color: Colors.black12,
-                          width: 1
-                      )
-                  ),
-                  fillColor: Colors.black12 ,
-                  filled: true,
-                  contentPadding: EdgeInsets.all(16),
-                ),
-                maxLength: 11,
-              ),
+              txtff(HintT: "رقم الهاتف", suf: "رقم الهاتف", MaxL: 11),
               SizedBox(height: 20,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -116,4 +82,25 @@ SizedBox(
       ),
     );
   }
-}
+  TextFormField txtff ({required String HintT,
+    required String suf,required int MaxL
+  }){
+    return TextFormField(
+      decoration: InputDecoration(
+        suffix: Text(suf),
+        hintText:HintT,
+        hintStyle: TextStyle(color: Colors.grey),
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(12),),
+            borderSide: BorderSide(
+                color: Colors.black12,
+                width: 1
+            )
+        ),
+        fillColor: Colors.black12 ,
+        filled: true,
+        contentPadding: EdgeInsets.all(16),
+      ),
+      maxLength: MaxL,
+    );
+}}
